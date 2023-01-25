@@ -55,42 +55,89 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
 
+Step 1: Create module encoder and decoder.
 
+Step 2: Get inputs and outputs for encoders and decoders.
+
+Step 3: Perform "or" operation for encoder and "and" logic for decoders.
+
+Step 4: Perform RTL LOGIC and get waveform.
+
+Step-5: End the module.
 
 ### PROGRAM 
-/*
+```
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: KANISHKAR M
+RegisterNumber:  22007816
 
+ENCODER
 
+module EX8(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
 
+```
 
+```
+Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
+Developed by: KANISHKAR M
+RegisterNumber:  22007816
 
+DECODER
+
+module EX8(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+input a,b,c;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0 = (~a&~b&~c);
+assign d1 = (~a&~b&c);
+assign d2 = (~a&b&~c);
+assign d3 = (~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c);
+assign d6 = (a&b&~c);
+assign d7 = (a&b&c);
+endmodule
+
+```
 
 ### RTL LOGIC  
 
+For ENCODER
 
+![image](https://user-images.githubusercontent.com/118886772/214613449-ba351eda-0e2b-4dbc-bd65-3ef0e7c5cccc.png)
 
+For DECODER
 
-
-
+![image](https://user-images.githubusercontent.com/118886772/214613558-6aac27a8-4a31-4c02-a554-d4696fbdd0b4.png)
 
 
 ### TIMING DIGRAMS  
 
+For ENCODER
 
+![image](https://user-images.githubusercontent.com/118886772/214613784-6992ffa9-142e-487d-82e7-4e60bbe26a58.png)
 
+For DECODER
 
+![image](https://user-images.githubusercontent.com/118886772/214613833-50196155-7c94-47f9-958c-d818160de3cf.png)
 
 ### TRUTH TABLE 
 
+For ENCODER
 
+![image](https://user-images.githubusercontent.com/118886772/214613991-a990ff65-55aa-4590-86ed-cb492e0096cb.png)
 
+For DECODER
 
+![image](https://user-images.githubusercontent.com/118886772/214614053-b2fdb609-de01-412d-a1fc-de845ac01179.png)
 
 
 ### RESULTS 
+
+Thus the program to implement encoder and decoder using verilog is verified.
